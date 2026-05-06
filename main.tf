@@ -5,7 +5,7 @@ module "vpc" {
 
 module "ec2" {
   source = "./modules/ec2"
-  subnet = module.vpc.public_subnet_id
+  subnet = module.vpc.public_subnet_ids[0]
 }
 
 module "alb" {
