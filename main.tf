@@ -4,12 +4,12 @@ module "vpc" {
 }
 
 module "ec2" {
-  source  = "./modules/ec2"
-  subnet  = module.vpc.public_subnet_id
+  source = "./modules/ec2"
+  subnet = module.vpc.public_subnet_id
 }
 
 module "alb" {
-  source = "./modules/alb"
-  vpc_id = module.vpc.vpc_id
+  source     = "./modules/alb"
+  vpc_id     = module.vpc.vpc_id
   subnet_ids = module.vpc.public_subnet_ids
 }
