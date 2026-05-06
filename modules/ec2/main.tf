@@ -13,4 +13,6 @@ resource "aws_instance" "app" {
   ami           = data.aws_ami.amazon_linux.id
   instance_type = "t2.micro"
   subnet_id     = var.subnet
+
+  associate_public_ip_address = true
 }
